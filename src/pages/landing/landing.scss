@@ -35,15 +35,23 @@
 }
 
 .join {
+  margin-top: 50px;
   &__title {
+    font-size: 1.5em;
       // styles for the join title
   }
 
   &__desc {
-      // styles for the join description
+    font-size: 1.2em;
   }
 
   &__button {
+    display: block;
+    font-size: 1.5em;
+    margin: 10px auto;
+    padding: 15px 45px;
+    background-color: #7cc4c0;
+    color: #111;
       // styles for the join button
   }
 }

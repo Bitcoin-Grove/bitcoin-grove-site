@@ -11,11 +11,13 @@ interface MembershipTierProps {
   bullets: string[];
   price: number;
   images?: string[];
+  spotsAvailable?: number;
 }
 
 const membershipTiers: MembershipTierProps[] = [
     {
       title: "Resident",
+      spotsAvailable: 13,
       description:
         "As a Resident Member, you'll enjoy full access to our hackerspace, including exclusive events, workshops, and networking opportunities. You'll also have the chance to collaborate with like-minded individuals and industry leaders.",
       bullets: [
@@ -40,7 +42,7 @@ const membershipTiers: MembershipTierProps[] = [
         "Exclusive Grove branded merchandise",
         "The warm fuzzy feeling of supporting a grassroots bitcoin initiative"
       ],
-      price: 180,
+      price: 170,
       images: ["/images/ironside_3.jpeg", "/images/ironside_4.jpeg"],
     },
   ];
@@ -49,6 +51,7 @@ const MembershipTier: React.FC<MembershipTierProps> = ({
   description,
   bullets,
   price,
+  spotsAvailable,
   images = [],
 }) => {
   return (
@@ -61,6 +64,7 @@ const MembershipTier: React.FC<MembershipTierProps> = ({
             <p className="membership-tier__price-text">${price}</p>
             <p className="membership-tier__price-panel-text">/ month</p>
           </span>
+          {spotsAvailable && <span className="membership-tier__available">Only {spotsAvailable} Spots Available!</span>}
         </div>
         <h5 className="membership-tier__benefits">Benefits</h5>
         <ol className="membership-tier__list">
@@ -81,6 +85,10 @@ const MembershipTier: React.FC<MembershipTierProps> = ({
 const Membership: React.FC<Props> = ({ className }) => {
   let [selectedTier, setSelectedTier] = useState(0);
 
+  const signup = () => {
+    window.location.href = "https://371ap9xb8m0.typeform.com/to/c7qlaADg"
+  }
+
   return (
     <div className={`membership ${className}`}>
       <h3 className="membership__title">Membership Tiers</h3>
@@ -99,6 +107,7 @@ const Membership: React.FC<Props> = ({ className }) => {
         })}
       </div>
       <MembershipTier {...membershipTiers[selectedTier]} />
+      <button onClick={signup} className="membership__join-button">Sign Up</button>
     </div>
   );
 };

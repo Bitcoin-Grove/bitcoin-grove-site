@@ -48,7 +48,6 @@ const Donation: React.FC<Props> = ({className}) => {
           excavate: true,
         }} />}
       </div>
-      <button className="donation__button">Donate</button>
     </div>
   )
 }
