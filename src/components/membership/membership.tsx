@@ -1,3 +1,4 @@
+import { SignUpUrl } from "../../constants";
 import "./membership.scss";
 
 interface Props {
@@ -68,7 +69,7 @@ const MembershipTier: React.FC<MembershipTierProps> = ({
 
 const Membership: React.FC<Props> = ({ className }) => {
   const signup = () => {
-    window.location.href = "https://371ap9xb8m0.typeform.com/to/G0mNcoOG"
+    window.location.href = SignUpUrl;
   }
 
   return (

@@ -3,10 +3,11 @@ import './landing.scss';
 import PageHeader from '../../components/header/header';
 import Membership from '../../components/membership/membership';
 import Donation from '../../components/donation/donation';
+import { SignUpUrl } from '../../constants';
 
 const LandingPage: React.FC = () => {
     const signup = () => {
-        window.location.href = "https://371ap9xb8m0.typeform.com/to/c7qlaADg"
+        window.location.href = SignUpUrl;
     }
 
     return (
