@@ -2,7 +2,6 @@ import React from 'react';
 import './landing.scss';
 import PageHeader from '../../components/header/header';
 import Membership from '../../components/membership/membership';
-import Donation from '../../components/donation/donation';
 import { SignUpUrl } from '../../constants';
 
 const LandingPage: React.FC = () => {
@@ -14,7 +13,6 @@ const LandingPage: React.FC = () => {
         <div className="landing-page">
             <PageHeader className="landing-page" /> 
             <Membership className="landing-page" />
-            <Donation className="landing-page" />
 
             <div className="join">
                 <h3 className="join__title">Ready to join Bitcoin Grove?</h3>
